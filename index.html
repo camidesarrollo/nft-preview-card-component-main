@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | NFT preview card component</title>
+
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+     body{
+      background-color: hsl(217, 54%, 11%);
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 0.1px);
+      font-size: 18px;
+      color: #607593;
+    }
+    .card{
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* size */
+    width: 320px;
+
+    /* color */
+    background-color: hsl(216, 50%, 16%);
+
+    /* round borders*/
+    border-radius: 20px;
+
+    /* shadow */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+      
+    }
+
+    img{
+      border-radius: 30px;
+      width: 90%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .card-main{
+      /* flexbox */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  .overlayPar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 255, 247, .4);
+    display: none;
+    margin-top: 15px;
+    border-radius: 10px;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+
+  .imgOverlay .view {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: auto;
+  }
+
+  .overlayPar:hover .imgOverlay  {
+    display: flex;
+  }
+
+  .equilibrium {
+    display: block;
+  }
+
+  .card-main:hover .overlay {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .card-main:hover .overlay + .view {
+    display: block;
+  }
+
+  h3{
+    margin: 25px 20px 10px 20px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    text-align: left;
+  }
+
+  h3:hover{
+    color: hsl(178, 100%, 50%);
+  }
+    
+  .description{
+    margin: 25px 0px 10px 20px;
+
+  }
+
+  .card-info{
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 20px 10px 20px;
+  }
+  .info{
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    margin-right: 0.5rem;
+    width: 20px;
+    margin-top: 0px;
+    
+  }
+
+  .creator-info{
+    margin: 25px 20px 10px 20px;
+    display: flex;
+    border-top: 1px solid #2C3E50;
+    padding-top: 1rem;
+    align-items: center;
+
+  }
+  .eth{
+    color: hsl(178, 100%, 50%);
+  }
+  .avatar{
+    width: 15%;
+    margin-top:0px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    margin-right: 5%;
+  }
+  .creator-text{
+    color: #607593;
+  }
+  .creator-name{
+    color: hsl(0, 0%, 100%);
+  }
+
+  .creator-name:hover{
+    color: hsl(178, 100%, 50%);
+  }
+
+    /* Footer Section */
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: var(--colour-white);
+    text-decoration: none;
+  }
+
+  .attribution a:hover {
+    color: var(--colour-cyan);
+  }
+
+  /* Media Queries */
+  @media screen and (max-width: 300px) {
+    .eth-info {
+      flex-direction: column;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+      <div class="card-main">                
+          <div class="overlayPar">
+            <img class="equilibrium" src="./images/image-equilibrium.jpg" alt="equilibrium image" />
+          <div class="imgOverlay">
+            <img src="./images/icon-view.svg" alt="view icon" class="view">
+          </div>
+      </div>
+      <div class="card-content">
+        <h3>Equilibrium #3429</h3>
+        <p class="description">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="card-info">
+          <div class="info">
+            <img src="images/icon-ethereum.svg" alt="ETH" class="icon"><span class="eth">0.041 ETH</span> 
+          </div>
+          <div class="info">
+            <img src="images/icon-clock.svg" alt="clock" class="icon"><span>3 days left</span>
+          </div>
+        </div>
+        <div class="creator-info">
+          <img src="images/image-avatar.png" alt="Jules Wyvern" class="avatar">
+          <p class="creator-text">Creation of <span class="creator-name">Jules Wyvern</span></p>
+        </div>
+      </div>   
+  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/camidesarrollo">Camila Paz Zaragoza Villaseca</a>.
+  </footer>
+
+</body>
+</html>
